@@ -26,7 +26,7 @@ From your command prompt/terminal go to your app's root folder and execute:
 ```
 
 ```typescript
-import { Video } from "nativescript-videoplayer";
+import { Menu } from "nativescript-menu";
 
 export class HelloWorldModel extends Observable {
   public message: string;

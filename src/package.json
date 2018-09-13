@@ -1,7 +1,7 @@
 {
     "name": "nativescript-menu",
-    "version": "1.0.0",
-    "description": "Your awesome NativeScript plugin.",
+    "version": "1.0.2",
+    "description": " an plugin that adds a pop-up menu to NativeScript.",
     "main": "menu",
     "typings": "index.d.ts",
     "nativescript": {
@@ -40,7 +40,7 @@
     "bugs": {
         "url": "https://github.com/xlmnxp/nativescript-menu/issues"
     },
-    "license": "Apache-2.0",
+    "license": "MIT",
     "homepage": "https://github.com/xlmnxp/nativescript-menu",
     "readmeFilename": "README.md",
     "devDependencies": {

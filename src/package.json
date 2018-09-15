@@ -1,6 +1,6 @@
 {
     "name": "nativescript-menu",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "an plugin that adds a pop-up menu to NativeScript.",
     "main": "menu",
     "typings": "index.d.ts",

@@ -1,7 +1,7 @@
 {
     "name": "nativescript-menu",
-    "version": "1.0.2",
-    "description": " an plugin that adds a pop-up menu to NativeScript.",
+    "version": "1.0.3",
+    "description": "an plugin that adds a pop-up menu to NativeScript.",
     "main": "menu",
     "typings": "index.d.ts",
     "nativescript": {
@@ -34,8 +34,8 @@
         "iOS"
     ],
     "author": {
-        "name": "Your Name",
-        "email": "youremail@yourdomain.com"
+        "name": "xlmnxp",
+        "email": "xlmnxp@outlook.sa"
     },
     "bugs": {
         "url": "https://github.com/xlmnxp/nativescript-menu/issues"

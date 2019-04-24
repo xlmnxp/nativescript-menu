@@ -5,7 +5,7 @@ import * as application from 'tns-core-modules/application/application';
 import * as view from "tns-core-modules/ui/core/view";
 
 export class Menu extends Common {
-    popup(options: MenuOptions): Promise<{id: number, title: string} | boolean> {
+    popup(options: MenuOptions): Promise<{id: number, title: string} | any | boolean> {
         return new Promise(function (resolve, reject) {
             try {
                 var i = void 0;
@@ -20,6 +20,12 @@ export class Menu extends Common {
                                     title: arg.title
                                 });
                             }));
+                        } else if (Types.isString(action.title)) {
+                            alertController.addAction(UIAlertAction.actionWithTitleStyleHandler(action, 0, arg => {
+                                resolve(Object.assign({
+                                    id: options.actions.find(actionItem => actionItem.title == arg.title).id || options.actions.indexOf(options.actions.find(actionItem => actionItem.title == arg.title))
+                                }, options.actions.find(actionItem => actionItem.title == arg.title)));
+                            }));
                         }
                     }
                 }
@@ -30,8 +36,8 @@ export class Menu extends Common {
                 }
                 showUIAlertController(alertController);
             }
-            catch (ex) {
-                reject(ex);
+            catch (error) {
+                reject(error);
             }
         });
     }

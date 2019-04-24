@@ -49,17 +49,42 @@ export class HelloWorldModel extends Observable {
 }
 ```
 
+with custom options
+```typescript
+import { Menu } from "nativescript-menu";
+
+export class HelloWorldModel extends Observable {
+  public message: string;
+  private menu: Menu;
+
+  constructor(public page: Page) {
+    super();
+  }
+
+  buttonTap() {
+    Menu.popup({
+      view: this.page.getViewById("menuBtn"),
+      actions: [{ id: "one", title: "Example" }, { id: "two", title: "NativeScript", customOption: "Hello" }, { id: "three", title: "Menu" }]
+    })
+    .then(action => {
+      alert(JSON.stringify(action))
+    })
+    .catch(console.log);
+  }
+}
+```
+
 ## API
 
 - MenuOptions
 ```typescript
 interface MenuOptions{
   view: View;
-  actions: string[];
+  actions: object[];
   cancelButtonText?: string; // iOS only
 }
 ```
 
 | Method                                                      | Description                      |
 | ----------------------------------------------------------- | -------------------------------- |
-| **popup(options: MenuOptions)**: Promise<{id: number, title: string} \| boolean> | Create a pop-up menu and show it |
+| **popup(options: MenuOptions)**: Promise<{id: number, title: string} \| actionObject \| boolean> | Create a pop-up menu and show it |

@@ -41,10 +41,10 @@ export class HelloWorldModel extends Observable {
       view: this.page.getViewById("menuBtn"),
       actions: ["Example", "NativeScript", "Menu"]
     })
-      .then(value => {
-        alert(value);
-      })
-      .catch(console.log);
+    .then(action => {
+      alert(action.id + " - " + action.title);
+    })
+    .catch(console.log);
   }
 }
 ```
@@ -62,4 +62,4 @@ interface MenuOptions{
 
 | Method                                                      | Description                      |
 | ----------------------------------------------------------- | -------------------------------- |
-| **popup(options: MenuOptions)**: Promise<string \| boolean> | Create a pop-up menu and show it |
+| **popup(options: MenuOptions)**: Promise<{id: number, title: string} \| boolean> | Create a pop-up menu and show it |

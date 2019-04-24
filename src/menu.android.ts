@@ -3,7 +3,8 @@ import * as app from "tns-core-modules/application";
 export { MenuOptions } from "./menu.common";
 
 export class Menu extends Common {
-  public static popup(options: MenuOptions): Promise<string | boolean> {
+  
+  public static popup(options: MenuOptions): Promise<{id: number, title: string} | boolean> {
     return new Promise((resolve, reject) => {
       try {
         let popupMenu = new android.widget.PopupMenu(
@@ -18,7 +19,10 @@ export class Menu extends Common {
         popupMenu.setOnMenuItemClickListener(
           new android.widget.PopupMenu.OnMenuItemClickListener({
             onMenuItemClick: (item): boolean => {
-              resolve(item.getTitle());
+              resolve({
+                id: options.actions.indexOf(item.getTitle()),
+                title: item.getTitle()
+              })
               return true;
             }
           })

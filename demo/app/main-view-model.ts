@@ -14,8 +14,12 @@ export class HelloWorldModel extends Observable {
     Menu.popup({
       view: this.page.getViewById("menuBtn"),
       actions: ["Example","NativeScript","Menu"]
-    }).then(value => {
-      alert(value);
+    }).then(action => {
+      if(action.id == 0){
+        alert(action.title);
+      } else {
+        alert("else action");
+      }
     }).catch(console.log);
   }
 }

@@ -14,7 +14,7 @@ export class HelloWorldModel extends Observable {
       view: this.page.getViewById("menuBtn"),
       actions: [{ id: "one", title: "Example" }, { id: "two", title: "NativeScript" }, { id: "three", title: "Menu" }]
     }).then(action => {
-      if (action.id == 0) {
+      if (action.id === 0) {
         alert(action.title);
       } else {
         alert("else action");

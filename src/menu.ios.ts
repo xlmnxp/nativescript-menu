@@ -5,11 +5,11 @@ import * as application from 'tns-core-modules/application/application';
 import * as view from "tns-core-modules/ui/core/view";
 
 export class Menu extends Common {
-    popup(options: MenuOptions): Promise<{id: number, title: string} | any | boolean> {
+    popup(options: MenuOptions): Promise<{ id: number, title: string } | any | boolean> {
         return new Promise(function (resolve, reject) {
             try {
-                var i = void 0;
-                var alertController = UIAlertController.alertControllerWithTitleMessagePreferredStyle("", "", 0);
+                let i = void 0;
+                let alertController = UIAlertController.alertControllerWithTitleMessagePreferredStyle("", "", 0);
                 if (options.actions) {
                     for (i = 0; i < options.actions.length; i++) {
                         let action = options.actions[i];
@@ -23,8 +23,8 @@ export class Menu extends Common {
                         } else if (Types.isString(action.title)) {
                             alertController.addAction(UIAlertAction.actionWithTitleStyleHandler(action, 0, arg => {
                                 resolve(Object.assign({
-                                    id: options.actions.find(actionItem => actionItem.title == arg.title).id || options.actions.indexOf(options.actions.find(actionItem => actionItem.title == arg.title))
-                                }, options.actions.find(actionItem => actionItem.title == arg.title)));
+                                    id: options.actions.find(actionItem => actionItem.title === arg.title).id || options.actions.indexOf(options.actions.find(actionItem => actionItem.title === arg.title))
+                                }, options.actions.find(actionItem => actionItem.title === arg.title)));
                             }));
                         }
                     }
@@ -43,12 +43,12 @@ export class Menu extends Common {
     }
 }
 
-var frame, button, label;
+let frame, button, label;
 function getCurrentPage() {
     if (!frame) {
         frame = require("ui/frame");
     }
-    var topmostFrame = frame.topmost();
+    let topmostFrame = frame.topmost();
     if (topmostFrame) {
         return topmostFrame.currentPage;
     }
@@ -57,9 +57,9 @@ function getCurrentPage() {
 
 
 function applySelectors(view, callback) {
-    var currentPage = getCurrentPage();
+    let currentPage = getCurrentPage();
     if (currentPage) {
-        var styleScope = currentPage._styleScope;
+        let styleScope = currentPage._styleScope;
         if (styleScope) {
             view._inheritStyleScope(styleScope);
             view.onLoaded();
@@ -71,11 +71,11 @@ function applySelectors(view, callback) {
 
 function getButtonColors() {
     if (!button) {
-        var Button = require("ui/button").Button;
+        let Button = require("ui/button").Button;
         button = new Button;
     }
-    var buttonColor;
-    var buttonBackgroundColor;
+    let buttonColor;
+    let buttonBackgroundColor;
     applySelectors(button, function (btn) {
         buttonColor = btn.color;
         buttonBackgroundColor = btn.backgroundColor;
@@ -85,10 +85,10 @@ function getButtonColors() {
 
 function getLabelColor() {
     if (!label) {
-        var Label = require("ui/label").Label;
+        let Label = require("ui/label").Label;
         label = new Label;
     }
-    var labelColor;
+    let labelColor;
     applySelectors(label, function (lbl) {
         labelColor = lbl.color;
     });
@@ -96,13 +96,13 @@ function getLabelColor() {
 }
 
 function showUIAlertController(alertController) {
-    var _a, _b;
-    var currentView = getCurrentPage() || application.getRootView();
+    let _a, _b;
+    let currentView = getCurrentPage() || application.getRootView();
     if (currentView) {
         currentView = currentView.modal || currentView;
-        var viewController = currentView.ios;
+        let viewController = currentView.ios;
         if (!(currentView.ios instanceof UIViewController)) {
-            var parentWithController = view.ios.getParentWithViewController(currentView);
+            let parentWithController = view.ios.getParentWithViewController(currentView);
             viewController = parentWithController ? parentWithController.viewController : undefined;
         }
         if (viewController) {
@@ -111,18 +111,18 @@ function showUIAlertController(alertController) {
                 alertController.popoverPresentationController.sourceRect = CGRectMake(viewController.view.bounds.size.width / 2.0, viewController.view.bounds.size.height / 2.0, 1.0, 1.0);
                 alertController.popoverPresentationController.permittedArrowDirections = 0;
             }
-            var color = getButtonColors().color;
+            let color = getButtonColors().color;
             if (color) {
                 alertController.view.tintColor = color.ios;
             }
-            var lblColor = getLabelColor();
+            let lblColor = getLabelColor();
             if (lblColor) {
                 if (alertController.title) {
-                    var title = NSAttributedString.alloc().initWithStringAttributes(alertController.title, (_a = {}, _a[NSForegroundColorAttributeName] = lblColor.ios, _a));
+                    let title = NSAttributedString.alloc().initWithStringAttributes(alertController.title, (_a = {}, _a[NSForegroundColorAttributeName] = lblColor.ios, _a));
                     alertController.setValueForKey(title, "attributedTitle");
                 }
                 if (alertController.message) {
-                    var message = NSAttributedString.alloc().initWithStringAttributes(alertController.message, (_b = {}, _b[NSForegroundColorAttributeName] = lblColor.ios, _b));
+                    let message = NSAttributedString.alloc().initWithStringAttributes(alertController.message, (_b = {}, _b[NSForegroundColorAttributeName] = lblColor.ios, _b));
                     alertController.setValueForKey(message, "attributedMessage");
                 }
             }

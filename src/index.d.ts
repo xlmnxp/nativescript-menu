@@ -3,7 +3,7 @@ import { View } from "tns-core-modules/ui/page/page";
 
 export declare interface MenuOptions {
   view: View;
-  actions: string[];
+  actions: object[] | string[];
   cancelButtonText?: string;
 }
 

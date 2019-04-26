@@ -5,7 +5,7 @@ import * as application from 'tns-core-modules/application/application';
 import * as view from "tns-core-modules/ui/core/view";
 
 export class Menu extends Common {
-    popup(options: MenuOptions): Promise<{ id: number, title: string } | any | boolean> {
+    public static popup(options: MenuOptions): Promise<{ id: number, title: string } | any | boolean> {
         return new Promise(function (resolve, reject) {
             try {
                 let i = void 0;

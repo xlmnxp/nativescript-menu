@@ -8,5 +8,5 @@ export declare interface MenuOptions {
 }
 
 export declare class Menu extends Common {
-  public static popup(options: MenuOptions): Promise<string | boolean>;
+  public static popup(options: MenuOptions): Promise<{ id: number, title: string } | string | boolean | any>;
 }

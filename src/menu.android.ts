@@ -5,7 +5,7 @@ import * as Types from 'tns-core-modules/utils/types';
 
 export class Menu extends Common {
 
-  public static popup(options: MenuOptions): Promise<{ id: number, title: string } | any | boolean> {
+  public static popup(options: MenuOptions): Promise<{ id: number, title: string } | string | boolean | any> {
     return new Promise((resolve, reject) => {
       try {
         let popupMenu = new android.widget.PopupMenu(

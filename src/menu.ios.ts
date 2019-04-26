@@ -21,7 +21,7 @@ export class Menu extends Common {
                                 });
                             }));
                         } else if (Types.isString(action.title)) {
-                            alertController.addAction(UIAlertAction.actionWithTitleStyleHandler(action, 0, arg => {
+                            alertController.addAction(UIAlertAction.actionWithTitleStyleHandler(action.title, 0, arg => {
                                 resolve(Object.assign({
                                     id: options.actions.find(actionItem => actionItem.title === arg.title).id || options.actions.indexOf(options.actions.find(actionItem => actionItem.title === arg.title))
                                 }, options.actions.find(actionItem => actionItem.title === arg.title)));

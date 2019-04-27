@@ -9,7 +9,7 @@ export class Menu extends Common {
         return new Promise(function (resolve, reject) {
             try {
                 let i = void 0;
-                let alertController = UIAlertController.alertControllerWithTitleMessagePreferredStyle("", "", 0);
+                let alertController = UIAlertController.alertControllerWithTitleMessagePreferredStyle(options && options.title ? options.title : "", options && options.message ? options.message : "", 0);
                 if (options.actions) {
                     for (i = 0; i < options.actions.length; i++) {
                         let action = options.actions[i];

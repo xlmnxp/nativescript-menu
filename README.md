@@ -1,6 +1,6 @@
 # nativescript-menu [![Build Status](https://travis-ci.org/xlmnxp/nativescript-menu.svg?branch=master)](https://travis-ci.org/xlmnxp/nativescript-menu)
 
-An plugin that adds a pop-up menu to NativeScript
+A plugin that adds a pop-up menu to NativeScript
 
 ### Installation
 

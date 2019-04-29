@@ -79,11 +79,11 @@ export class HelloWorldModel extends Observable {
 - MenuOptions
 ```typescript
 export interface MenuOptions {
-  title ?: string; // iOS only
-  message ?: string; // iOS only
+  title?: string; // IOS Only
+  message?: string; // IOS Only
   view: View;
-  actions: any[];
-  cancelButtonText ?: string; // iOS only
+  actions: object[] | string[];
+  cancelButtonText?: string;  // IOS Only
 }
 ```
 

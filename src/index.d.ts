@@ -5,6 +5,8 @@ export declare interface MenuOptions {
   view: View;
   actions: object[] | string[];
   cancelButtonText?: string;
+  message ?: string,
+  title ?: string
 }
 
 export declare class Menu extends Common {

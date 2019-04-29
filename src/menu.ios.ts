@@ -5,11 +5,11 @@ import * as application from 'tns-core-modules/application/application';
 import * as view from "tns-core-modules/ui/core/view";
 
 export class Menu extends Common {
-    popup(options: MenuOptions): Promise<{ id: number, title: string } | any | boolean> {
+    public static popup(options: MenuOptions): Promise<{ id: number, title: string } | string | boolean | any> {
         return new Promise(function (resolve, reject) {
             try {
                 let i = void 0;
-                let alertController = UIAlertController.alertControllerWithTitleMessagePreferredStyle("", "", 0);
+                let alertController = UIAlertController.alertControllerWithTitleMessagePreferredStyle(options && options.title ? options.title : "", options && options.message ? options.message : "", 0);
                 if (options.actions) {
                     for (i = 0; i < options.actions.length; i++) {
                         let action = options.actions[i];
@@ -21,7 +21,7 @@ export class Menu extends Common {
                                 });
                             }));
                         } else if (Types.isString(action.title)) {
-                            alertController.addAction(UIAlertAction.actionWithTitleStyleHandler(action, 0, arg => {
+                            alertController.addAction(UIAlertAction.actionWithTitleStyleHandler(action.title, 0, arg => {
                                 resolve(Object.assign({
                                     id: options.actions.find(actionItem => actionItem.title === arg.title).id || options.actions.indexOf(options.actions.find(actionItem => actionItem.title === arg.title))
                                 }, options.actions.find(actionItem => actionItem.title === arg.title)));

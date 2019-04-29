@@ -1,6 +1,6 @@
 # nativescript-menu [![Build Status](https://travis-ci.org/xlmnxp/nativescript-menu.svg?branch=master)](https://travis-ci.org/xlmnxp/nativescript-menu)
 
-An plugin that adds a pop-up menu to NativeScript
+A plugin that adds a pop-up menu to NativeScript
 
 ### Installation
 
@@ -79,11 +79,11 @@ export class HelloWorldModel extends Observable {
 - MenuOptions
 ```typescript
 export interface MenuOptions {
-  title: string; // iOS only
-  message: string; // iOS only
+  title ?: string; // iOS only
+  message ?: string; // iOS only
   view: View;
   actions: any[];
-  cancelButtonText?: string; // iOS only
+  cancelButtonText ?: string; // iOS only
 }
 ```
 

@@ -9,7 +9,7 @@ export class Menu extends Common {
     return new Promise((resolve, reject) => {
       try {
         let popupMenu = new android.widget.PopupMenu(
-          app.android.context,
+          app.android.startActivity,
           options.view.android
         );
 

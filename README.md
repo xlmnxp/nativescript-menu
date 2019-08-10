@@ -10,13 +10,9 @@ From your command prompt/terminal go to your app's root folder and execute:
 
 ## Demo
 
-### Android
-
-<img alt="screenshot 1" src="https://raw.githubusercontent.com/xlmnxp/nativescript-menu/master/screenshots/screenshotAndroid.gif" width="170">
-
-### iOS
-
-<img alt="screenshot 1" src="https://raw.githubusercontent.com/JoshDSommer/nativescript-menu/master/screenshots/screenshotIos.gif" width="170">
+| Android | iOS |
+| ------------ | ------------ |
+| <img alt="screenshot 1" src="https://raw.githubusercontent.com/xlmnxp/nativescript-menu/master/screenshots/screenshotAndroid.gif" width="170"> | <img alt="screenshot 2" src="https://raw.githubusercontent.com/JoshDSommer/nativescript-menu/master/screenshots/screenshotIos.gif" width="170"> |
 
 ## Usage
 

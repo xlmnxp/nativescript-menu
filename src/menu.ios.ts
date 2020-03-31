@@ -1,6 +1,5 @@
 import { Common, MenuOptions } from './menu.common';
 export { MenuOptions } from './menu.common';
-import * as Types from 'tns-core-modules/utils/types';
 import { action } from "tns-core-modules/ui/dialogs";
 
 export class Menu extends Common {
@@ -15,13 +14,13 @@ export class Menu extends Common {
                 }).then(result => {
                     if (result) {
                             let action = options.actions.filter(action => action.title == result)[0];
-                            if(action == undefined) {
+                            if(action) {
+                                resolve(action)
+                            } else {
                                 resolve({
                                     id: options.actions.indexOf(result),
                                     title: result
                                 })
-                            } else {
-                                resolve(action)
                             }
 
                             if(result == options.cancelButtonText) {

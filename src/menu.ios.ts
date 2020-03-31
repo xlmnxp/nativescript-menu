@@ -10,7 +10,7 @@ export class Menu extends Common {
                     title: options.title, 
                     message: options.message,
                     cancelButtonText: options.cancelButtonText,
-                    actions: options.actions.map(r => r.title)
+                    actions: options.actions.map(r => r.title  || r)
                 }).then(result => {
                     if (result) {
                             let action = options.actions.filter(action => action.title == result)[0];

@@ -10,7 +10,9 @@ From your command prompt/terminal go to your app's root folder and execute:
 
 ## Demo
 
-<img alt="screenshot 1" src="https://raw.githubusercontent.com/xlmnxp/nativescript-menu/master/screenshots/screenshotAndroid.gif" width="170">
+| Android | iOS |
+| ------------ | ------------ |
+| <img alt="screenshot 1" src="https://raw.githubusercontent.com/xlmnxp/nativescript-menu/master/screenshots/screenshotAndroid.gif" width="170"> | <img alt="screenshot 2" src="https://raw.githubusercontent.com/JoshDSommer/nativescript-menu/master/screenshots/screenshotIos.gif" width="170"> |
 
 ## Usage
 
@@ -41,15 +43,16 @@ export class HelloWorldModel extends Observable {
       view: this.page.getViewById("menuBtn"),
       actions: ["Example", "NativeScript", "Menu"]
     })
-    .then(action => {
-      alert(action.id + " - " + action.title);
-    })
-    .catch(console.log);
+      .then(action => {
+        alert(action.id + " - " + action.title);
+      })
+      .catch(console.log);
   }
 }
 ```
 
 with custom options
+
 ```typescript
 import { Menu } from "nativescript-menu";
 
@@ -64,12 +67,16 @@ export class HelloWorldModel extends Observable {
   buttonTap() {
     Menu.popup({
       view: this.page.getViewById("menuBtn"),
-      actions: [{ id: "one", title: "Example" }, { id: "two", title: "NativeScript", customOption: "Hello" }, { id: "three", title: "Menu" }]
+      actions: [
+        { id: "one", title: "Example" },
+        { id: "two", title: "NativeScript", customOption: "Hello" },
+        { id: "three", title: "Menu" }
+      ]
     })
-    .then(action => {
-      alert(JSON.stringify(action))
-    })
-    .catch(console.log);
+      .then(action => {
+        alert(JSON.stringify(action));
+      })
+      .catch(console.log);
   }
 }
 ```
@@ -77,16 +84,17 @@ export class HelloWorldModel extends Observable {
 ## API
 
 - MenuOptions
+
 ```typescript
 export interface MenuOptions {
   title?: string; // IOS Only
   message?: string; // IOS Only
   view: View;
   actions: object[] | string[];
-  cancelButtonText?: string;  // IOS Only
+  cancelButtonText?: string; // IOS Only
 }
 ```
 
-| Method                                                      | Description                      |
-| ----------------------------------------------------------- | -------------------------------- |
+| Method                                                                                           | Description                      |
+| ------------------------------------------------------------------------------------------------ | -------------------------------- |
 | **popup(options: MenuOptions)**: Promise<{id: number, title: string} \| actionObject \| boolean> | Create a pop-up menu and show it |

@@ -1,5 +1,5 @@
 import { Common } from "./menu.common";
-import { View } from "tns-core-modules/ui/page/page";
+import { View } from "@nativescript/core";
 
 export declare interface MenuOptions {
   title?: string; // IOS Only

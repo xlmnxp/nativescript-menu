@@ -1,4 +1,4 @@
-import { View } from "tns-core-modules/ui/page";
+import { View } from "@nativescript/core";
 
 export interface MenuOptions {
   title: string;

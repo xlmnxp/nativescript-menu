@@ -1,27 +1,38 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "declaration": true,
-        "removeComments": true,
-        "noLib": false,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "skipLibCheck": true,
-        "lib": ["es6", "dom"],
-        "sourceMap": true,
-        "pretty": true,
-        "allowUnreachableCode": false,
-        "allowUnusedLabels": false,
-        "noEmitHelpers": true,
-        "noEmitOnError": false,
-        "noImplicitAny": false,
-        "noImplicitReturns": true,
-        "noImplicitUseStrict": false,
-        "noFallthroughCasesInSwitch": true
-    },
-    "exclude": [
-        "node_modules"
-    ],
-    "compileOnSave": false
+  "compilerOptions": {
+      "module": "esnext",
+      "target": "es2017",
+      "moduleResolution": "node",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "noEmitHelpers": true,
+      "noEmitOnError": true,
+      "skipLibCheck": true,
+      "lib": [
+        "es2018", "es2017", "dom", "es6"
+      ],
+      "baseUrl": ".",
+      "paths": {
+          "~/*": [
+              "app/*"
+          ]
+      }
+  },
+  "include": [
+    "src/tests/**/*.ts",
+    "src/**/*.ios.ts",
+    "src/**/*.android.ts"
+  ],
+  "files": [
+    "./references.d.ts",
+    "./src/main.ts"
+  ],
+  "exclude": [
+      "node_modules",
+      "platforms",
+      "e2e"
+  ],
+  "angularCompilerOptions": {
+    "enableIvy": true
+  }
 }

@@ -6,18 +6,16 @@
         "@nativescript/core": "^7.0.13"
     },
     "devDependencies": {
-        "@nativescript/android": "7.0.1",
-        "@nativescript/types": "^7.0.4",
-        "@nativescript/webpack": "~3.0.0",
         "jasmine-core": "^2.5.2",
         "karma": "4.1.0",
         "karma-jasmine": "2.0.1",
         "karma-nativescript-launcher": "^0.4.0",
-        "karma-webpack": "3.0.5",
         "nativescript-css-loader": "~0.26.1",
         "nativescript-dev-webpack": "1.0.1",
+        "@nativescript/types": "^7.0.4",
         "tslint": "~5.4.3",
-        "typescript": "~3.9.0"
+        "typescript": "~3.9.0",
+        "karma-webpack": "3.0.5"
     },
     "scripts": {
         "build.plugin": "cd ../src && npm run build",

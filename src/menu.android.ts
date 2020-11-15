@@ -1,7 +1,7 @@
 import { Common, MenuOptions } from "./menu.common";
-import * as app from "tns-core-modules/application";
+import { Application as app } from "@nativescript/core";
 export { MenuOptions } from "./menu.common";
-import * as Types from 'tns-core-modules/utils/types';
+import * as Types from '@nativescript/core/utils/types';
 
 export class Menu extends Common {
 

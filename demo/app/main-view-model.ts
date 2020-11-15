@@ -1,6 +1,6 @@
-import { Observable } from 'tns-core-modules/data/observable';
+import { Observable } from '@nativescript/core';
 import { Menu } from 'nativescript-menu';
-import { Page } from 'tns-core-modules/ui/page/page';
+import { Page } from '@nativescript/core';
 
 export class HelloWorldModel extends Observable {
   public message: string;
@@ -17,7 +17,7 @@ export class HelloWorldModel extends Observable {
       if (action.id === 0) {
         alert(action.title);
       } else {
-        alert("else action");
+        alert("else action2");
       }
     }).catch(console.log);
   }

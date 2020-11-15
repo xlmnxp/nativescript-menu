@@ -1,6 +1,6 @@
 import { Common, MenuOptions } from './menu.common';
 export { MenuOptions } from './menu.common';
-import { action } from "tns-core-modules/ui/dialogs";
+import { action } from "@nativescript/core/ui/dialogs";
 
 export class Menu extends Common {
     public static popup(options: MenuOptions): Promise<{ id: number, title: string } | string | boolean | any> {

@@ -1,6 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
   xmlns:ui="nativescript-menu">
   <StackLayout class="p-20">
-    <Button id="menuBtn" text="getMenu" tap="{{ buttonTap }}"/>
+    <Button id="menuBtn" text="MENU" tap="{{ buttonTap }}"/>
   </StackLayout>
 </Page>

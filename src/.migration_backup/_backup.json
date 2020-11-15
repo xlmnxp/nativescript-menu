@@ -1,0 +1,14 @@
+{
+	"name": "migration",
+	"paths": [
+		"hooks",
+		"package.json",
+		"package-lock.json",
+		"package.json",
+		"package.json",
+		"package.json",
+		"package.json",
+		"tsconfig.tns.json",
+		"package.json"
+	]
+}
